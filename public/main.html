@@ -33,25 +33,32 @@
     <label for="searchInput"></label>
     <input type="text" id="searchInput" placeholder="Rechercher un coiffeur...">
 
-    <!-- Bouton pour le menu déroulant -->
-    <div class="dropdown">
-        <button class="dropbtn">Rechercher dans</button>
-        <div class="dropdown-content">
-            <a href="#" onclick="setSearchType('nom')">Nom</a>
-            <a href="#" onclick="setSearchType('numero')">Numéro</a>
-            <a href="#" onclick="setSearchType('voie')">Voie</a>
-            <a href="#" onclick="setSearchType('code_postal')">Code Postal</a>
-            <a href="#" onclick="setSearchType('ville')">Ville</a>
-        </div>
-    </div>
-    <div class="dropdown">
-        <button class="dropbtn">Trier par</button>
-        <div class="dropdown-content">
-            <a href="#" onclick="setSortBy('nom')">Nom</a>
-            <a href="#" onclick="setSortBy('ville')">Ville</a>
-            <a href="#" onclick="setSortBy('code_postal')">Code Postal</a>
-            <a href="#" onclick="setSortBy('voie')">Voie</a>
-            <a href="#" onclick="setSortBy('numero')">Numéro</a>
+    <div class="combined-dropdown">
+        <!-- Bouton pour ouvrir le menu déroulant combiné -->
+        <button class="dropbtn">...</button>
+        <div class="combined-dropdown-content">
+            <!-- Contenu pour le type de recherche -->
+            <div class="dropdown">
+                <button class="dropbtn">Rechercher dans</button>
+                <div class="dropdown-content" id="searchTypeDropdown">
+                    <a href="#" onclick="setSearchType('nom')">Nom</a>
+                    <a href="#" onclick="setSearchType('numero')">Numéro</a>
+                    <a href="#" onclick="setSearchType('voie')">Voie</a>
+                    <a href="#" onclick="setSearchType('code_postal')">Code Postal</a>
+                    <a href="#" onclick="setSearchType('ville')">Ville</a>
+                </div>
+            </div>
+            <!-- Contenu pour le tri -->
+            <div class="dropdown">
+                <button class="dropbtn">Trier par</button>
+                <div class="dropdown-content" id="sortByDropdown">
+                    <a href="#" onclick="setSortBy('nom')">Nom</a>
+                    <a href="#" onclick="setSortBy('ville')">Ville</a>
+                    <a href="#" onclick="setSortBy('code_postal')">Code Postal</a>
+                    <a href="#" onclick="setSortBy('voie')">Voie</a>
+                    <a href="#" onclick="setSortBy('numero')">Numéro</a>
+                </div>
+            </div>
         </div>
     </div>
 

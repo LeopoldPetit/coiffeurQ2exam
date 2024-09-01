@@ -3,19 +3,93 @@ body {
     padding: 0;
 }
 /* Style du menu déroulant */
-.dropdown {
+/* Style général du menu déroulant combiné */
+.combined-dropdown {
     position: relative;
     display: inline-block;
 }
 
-.dropbtn {
-    background-color: #4CAF50; /* Couleur du bouton */
+/* Style du bouton de menu combiné */
+.combined-dropdown .dropbtn {
+    background-color: #3498db;
     color: white;
-    padding: 8px;
     border: none;
+    padding: 10px 15px;
+    font-size: 16px;
     cursor: pointer;
-    font-size: 14px;
+    outline: none;
+    border-radius: 8px; /* Coins arrondis */
 }
+
+/* Style du contenu déroulant combiné */
+.combined-dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 200px; /* Ajuste selon les besoins */
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    padding: 10px;
+    border-radius: 8px; /* Coins arrondis pour le contenu déroulant */
+}
+
+/* Style du conteneur des menus déroulants internes */
+.dropdown {
+    position: relative;
+}
+
+/* Style du bouton de menu déroulant interne */
+.dropdown .dropbtn {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    outline: none;
+    width: 100%;
+    text-align: left;
+    border-radius: 8px; /* Coins arrondis */
+}
+
+/* Style du contenu déroulant interne */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 8px; /* Coins arrondis pour le contenu déroulant interne */
+}
+
+/* Style des liens dans le menu déroulant interne */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Style des liens au survol */
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+/* Afficher le contenu déroulant combiné au survol du bouton */
+.combined-dropdown:hover .combined-dropdown-content {
+    display: block;
+}
+
+/* Afficher le contenu déroulant interne au survol du bouton interne */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #2980b9;
+}
+
 body, html {
     height: 100%;
     margin: 0;
