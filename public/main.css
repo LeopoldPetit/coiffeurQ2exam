@@ -1,0 +1,216 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+/* Style du menu déroulant */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn {
+    background-color: #4CAF50; /* Couleur du bouton */
+    color: white;
+    padding: 8px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #3e8e41;
+}
+
+.save-button {
+    /* Styles pour le bouton ajouter */
+    background-color: #b453ac; /* Couleur de fond */
+    color: #ffffff; /* Couleur du texte */
+    padding: 10px 20px; /* Espacement interne */
+    border: none; /* Supprimer la bordure par défaut */
+    border-radius: 20px; /* Coins arrondis */
+    cursor: pointer; /* Curseur au survol */
+    font-size: 16px; /* Taille du texte */
+}
+
+.save-button:hover {
+    background-color: #e630da; /* Changement de couleur au survol */
+}
+
+.navbar {
+    /* Styles pour la barre de navigation */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: black;
+    color: white;
+    padding: 5px 0;
+    text-align: center;
+    z-index: 999;
+}
+#fixedButton {
+    /* Styles pour un bouton connexion */
+    position: fixed;
+    top: 95px; /* Ajustez la valeur pour positionner le bouton en haut de la page */
+    right: 20px; /* Ajustez la valeur pour positionner le bouton à droite */
+    z-index: 9999; /* Assurez-vous que le bouton apparaît au-dessus du contenu */
+    width: 50px; /* Assurez-vous que width et height sont égaux pour obtenir un cercle */
+    height: 50px; /* Ajustez la taille du bouton selon vos préférences */
+    border-radius: 50%; /* Définit le border-radius à 50% pour créer un cercle */
+    background-color: #e630da; /* Couleur de fond du bouton */
+    color: white; /* Couleur du texte */
+    border: none; /* Supprime les bordures */
+    cursor: pointer; /* Affiche un curseur au survol */
+    transition: transform 0.3s ease; /* Transition de la propriété transform */
+    transform: scale(0) rotate(0deg); /* Échelle initiale du bouton à 0 (invisible) */
+}
+#fixedButton.visible {
+    /* Styles lorsque la classe 'visible' est ajoutée au bouton fixe */
+    transform: scale(1) rotate(180deg); /* Échelle finale du bouton à 1 (visible) */
+}
+.selected {
+    background-color: #b453ac; /* Change la couleur de fond en rose lorsque sélectionné */
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+}
+
+.column {
+    height: 100%;
+    padding-top: 10px;
+    overflow: auto; /* Permet le défilement si nécessaire */
+
+}
+
+.first-column {
+    width: 100%; /* Par défaut, prend toute la largeur */
+    transition: width 0.5s ease-in-out; /* Transition pour une animation fluide */
+}
+
+.second-column {
+    width: 0;
+    overflow: hidden; /* Masque le contenu s'il dépasse */
+    transition: width 0.5s ease-in-out; /* Transition pour une animation fluide */
+
+}
+
+#loginButton,
+#logoutButton {
+    padding: 8px 15px;
+    background-color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 40px;
+}
+#addButton {
+    padding: 8px 15px;
+    background-color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 20px;
+}
+.detail-value {
+    border: none; /* Supprimer la bordure par défaut */
+    background-color: #f2f2f2; /* Couleur de fond gris */
+    padding: 8px; /* Espacement interne */
+    border-radius: 5px; /* Coins arrondis */
+    width: 250px;
+}
+
+#coiffeurDetailsContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+    padding-top: 20px;
+}
+
+.search-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0; /* Couleur de fond de la barre de recherche */
+    padding: 8px 16px; /* Espacement intérieur de la barre de recherche */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Ombre pour effet de profondeur */
+    margin-top: 80px;
+}
+
+.search-bar input[type="text"] {
+    width: 300px; /* Largeur du champ de recherche */
+    padding: 8px; /* Espacement intérieur du champ de recherche */
+    border: none; /* Suppression de la bordure par défaut */
+    border-radius: 4px; /* Arrondi des coins du champ de recherche */
+    outline: none; /* Suppression du contour lors du focus */
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1); /* Légère ombre interne */
+}
+
+#otherContent{
+    margin-outside: 10px;
+    background-color: lightgray;
+    overflow-y: hidden;
+
+}
+.coiffeur-details strong {
+    font-weight: bold;
+}
+.coiffeur-details {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: 10px;
+}
+
+.detail-label {
+    font-weight: bold;
+}
+
+.detail-row {
+    display: contents;
+}
+
+.navbar button img {
+    width: 20px;
+    height: 20px;
+}
+
+.navbarTitle {
+    margin-left: 20px;
+}
+
+
+
+.hover-background {
+    transition: background-color 0.3s ease;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 5px;
+}

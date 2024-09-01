@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>coiff'EUR</title>
+    <link rel="icon" href="img/icon.png" type="image/png">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <style>
+        /* Styles pour le compteur de favoris */
+        #favorites-count {
+            font-size: 1.2em;
+            font-weight: bold;
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- Barre noire fixe -->
+<div class="navbar">
+    <h2 class="navbarTitle">coiff'EUR</h2>
+    <div id="favorites-count-container">
+        <span id="favorites-count">0</span> Coiffeurs en favoris
+    </div>
+    <button id="loginButton" onclick="openLoginPage()">
+        <img src="img/login.png" alt="login img">
+    </button>
+</div>
+<div class="search-bar" id="searchBar">
+    <label for="searchInput"></label>
+    <input type="text" id="searchInput" placeholder="Rechercher un coiffeur...">
+
+    <!-- Bouton pour le menu déroulant -->
+    <div class="dropdown">
+        <button class="dropbtn">Rechercher dans</button>
+        <div class="dropdown-content">
+            <a href="#" onclick="setSearchType('nom')">Nom</a>
+            <a href="#" onclick="setSearchType('numero')">Numéro</a>
+            <a href="#" onclick="setSearchType('voie')">Voie</a>
+            <a href="#" onclick="setSearchType('code_postal')">Code Postal</a>
+            <a href="#" onclick="setSearchType('ville')">Ville</a>
+        </div>
+    </div>
+    <div class="dropdown">
+        <button class="dropbtn">Trier par</button>
+        <div class="dropdown-content">
+            <a href="#" onclick="setSortBy('nom')">Nom</a>
+            <a href="#" onclick="setSortBy('ville')">Ville</a>
+            <a href="#" onclick="setSortBy('code_postal')">Code Postal</a>
+            <a href="#" onclick="setSortBy('voie')">Voie</a>
+            <a href="#" onclick="setSortBy('numero')">Numéro</a>
+        </div>
+    </div>
+
+    <button id="fixedButton">X</button>
+</div>
+
+
+<!-- Contenu de la page -->
+<div class="container" id="mainContent">
+    <!-- Première colonne pour le contenu existant -->
+    <div class="column first-column" id="contentWrapper">
+        <ul id="coiffeursList">
+            <!-- Les détails des coiffeurs seront affichés ici -->
+        </ul>
+    </div>
+
+    <div class="column second-column" id="otherContent">
+        <!-- Contenu pour la deuxième colonne -->
+    </div>
+</div>
+
+
+<script src="main.js"></script>
+
+</body>
+</html>
