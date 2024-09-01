@@ -16,6 +16,64 @@ body {
     cursor: pointer;
     font-size: 14px;
 }
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.coiffeur-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px; /* Pour espacer chaque coiffeur */
+}
+
+.star-section {
+    margin-right: 10px; /* Espacement entre l'étoile et les infos */
+    display: flex;
+    align-items: center;
+}
+
+.info-section {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Style pour le bouton d'ajout aux favoris (étoile grise) */
+.favorite-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    padding: 0;
+}
+
+.favorite-button svg {
+    fill: none;
+    stroke: gray; /* Étoile grise */
+    transition: fill 0.3s ease;
+}
+
+/* Style pour le bouton de suppression des favoris (étoile pleine) */
+.remove-favorite-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    padding: 0;
+    display: none; /* Caché par défaut */
+}
+
+.remove-favorite-button svg {
+    fill: yellow; /* Étoile pleine et jaune */
+    stroke: orange; /* Contour de l'étoile en orange */
+}
+
+/* Optionnel : Style au survol */
+.favorite-button:hover svg {
+    stroke: darkgray; /* Changement de couleur au survol pour la partie grise */
+}
+
 
 .dropdown-content {
     display: none;

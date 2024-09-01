@@ -404,14 +404,32 @@ updateFavoritesCount();
 function createCoiffeurDiv(coiffeur, counter) {
     const div = document.createElement('div');
     div.innerHTML = `
-        ${coiffeur.nom}<br>
-        ${coiffeur.numero}<br>
-        ${coiffeur.voie}<br>
-        ${coiffeur.code_postal}<br>
-        ${coiffeur.ville}<br>
-        <button class="favorite-button">Add to Favorites</button>
-        <button class="remove-favorite-button" style="display: none;">Remove from Favorites</button>
+        <div class="coiffeur-item">
+    <div class="star-section">
+        <!-- Bouton d'ajout aux favoris (étoile grise) -->
+        <button class="favorite-button">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-star">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+            </svg>
+        </button>
+        <!-- Bouton de suppression des favoris (étoile pleine et jaune) -->
+        <button class="remove-favorite-button" style="display: none;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="yellow" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-star">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+            </svg>
+        </button>
+    </div>
+    <div class="info-section">
+        <span>${coiffeur.nom}</span><br>
+        <span>${coiffeur.numero}</span><br>
+        <span>${coiffeur.voie}</span><br>
+        <span>${coiffeur.code_postal}</span><br>
+        <span>${coiffeur.ville}</span><br>
         <span class="coiffeurNumber">${counter}</span><br><br>
+    </div>
+</div>
+
+
     `;
 
     div.classList.add('hover-background');
